@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}: Expense Chart{% endblock %}
+
+{% block main %}
+    <canvas id="Expenses" width="800" height="350"></canvas>
+
+    <script>
+        let xValues = {{ labels | safe }};
+        let yValues = {{ values | safe }};
+        let barColors = [
+          "#6D726C",
+          "#60645F",
+          "#494C48",
+          "#7E7A83",
+          "#393D37",
+          "#252724",
+          "#3F423D",
+          "#000000",
+        ];
+
+        new Chart("Expenses", {
+        type: 'bar',
+        data: {
+          labels: xValues,
+          datasets: [{
+            label: 'Expenses',
+            backgroundColor: barColors,
+            barPercentage: 0.8,
+            data: yValues,
+            borderWidth: 1
+          }]
+          },
+          options: {
+            scales: {
+                yAxes: [{
+                  display: true,
+                  ticks: {
+                    beginAtZero: true,
+                  }
+                }]
+            }
+          }
+      });
+      </script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}: Add Income{% endblock %}
+
+{% block main %}
+    <p class="text2">Choose your source of income:</p>
+    <form action="/add_income" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="source">
+                <option disabled selected>Source</option>
+                {% for row in source %}
+                  <option id="source" value="{{ row }}">{{ row }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="income" name="income" placeholder="Amount" type="text">
+        </div>
+        <button type="submit" id="btn" class="btn btn-outline-light">Add Income</button>
+    </form>
+{% endblock %}
