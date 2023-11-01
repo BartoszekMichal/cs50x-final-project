@@ -3,6 +3,7 @@
 #### Description:
 
 """THIS WORK SHALL NOT BE USED, REPRODUCED OR DISTRIBUTED BY ANY OTHER THIRD PARTY EXCEPT HARVARD UNIVERSITY AND THE AUTHOR"""
+"""THIS PROJECT REQUIRES "lib50" AND "cs50" PACKAGES INSTALLED."""
 
 This app has been created simply for budgeting needs of households, however it can be simply altered for other uses.
 
